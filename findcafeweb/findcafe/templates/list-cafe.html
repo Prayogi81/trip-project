@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Wifi</th>
+            <th>Toilet</th>
+            <th>Smoking Area</th>
+            <th>AC Room</th>
+            <th>Avg. Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for cafe in cafes %}
+          <tr>
+            <td><a href="{% url 'edit_cafe' cafe.id %}">{{cafe.name}}</a></td>
+            <td>{{cafe.location}}</td>
+            <td>{{cafe.wifi}}</td>
+            <td>{{cafe.toilet}}</td>
+            <td>{{cafe.smokingarea}}</td>
+            <td>{{cafe.ac_room}}</td>
+            <td>{{cafe.avg_price}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}
